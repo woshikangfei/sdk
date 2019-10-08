@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="jhsdk_text_white">#ffffff</color>
+    <color name="jhsdk_text_black">#333333</color>
+    <color name="jhsdk_text_black2">#000000</color>
+    <color name="jhsdk_text_grey">#666666</color>
+    <color name="jhsdk_text_hint">#cccccc</color>
+    <color name="jhsdk_text_red">#e51110</color>
+    <color name="jhsdk_splash_skip_view_bg_color">#8C8C8C8C</color>
+    <color name="jhsdk_splash_skip_text_color">#ffffff</color>
+    <color name="dimgray">#696969</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+</resources>

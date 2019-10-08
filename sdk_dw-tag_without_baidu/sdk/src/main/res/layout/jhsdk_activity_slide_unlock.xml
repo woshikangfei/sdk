@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:chuck="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="16dp"
+    android:paddingLeft="36dp"
+    android:paddingRight="36dp"
+    android:paddingTop="16dp"
+    android:background="@color/jhsdk_text_black"
+    >
+
+    <com.analytics.sdk.view.widget.SlideUnlockView
+        android:id="@+id/slide_to_unlock"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+    </com.analytics.sdk.view.widget.SlideUnlockView>
+
+</RelativeLayout>

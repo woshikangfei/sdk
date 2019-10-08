@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">jh_sdk</string>
+    <string name="title_start_video">开始</string>
+    <string name="title_pause_video">暂停</string>
+    <string name="title_resume_video">恢复</string>
+
+    <string name="xad_text_highlight_ad_wonderful_time">精彩集锦</string>
+    <string name="xad_text_highlight_ad_immediate_view">立即查看</string>
+    <string name="xad_text_highlight_ad_ad">广告</string>
+    <string name="xad_text_idle_ad_ad">广告</string>
+    <string name="xad_xad_text_ad">广告</string>
+</resources>

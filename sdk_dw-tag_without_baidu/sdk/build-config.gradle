@@ -1,0 +1,56 @@
+gradle.ext {
+
+    JAR_HOME = "buildMap/intermediates/packaged-classes"
+    AAR_HOME = "buildMap/outputs/aar"
+    JAR_OUTPUT_DIR = "output_jar"
+    AAR_OUTPUT_DIR = "output_aar"
+    ARTIFACT_NAME = "simeng_sdk"
+
+    //是否切换到热修复的开发环境
+    HOT_FIX = false
+    //开发动态任务
+    HOT_TASK = false
+    //是否是正式环境 ， 0 = 正式环境 ， 1 = 测试环境 , 2 = 调试环境
+    RELEASE_EVN = 1
+    //是否HOOK穿山甲SDK
+    HOOK_CSJ_SDK = false
+    //是否拦截系统(迅雷某个版本暂且不支持hook)
+    HOOK_SYSTEM = false
+    //是否打印LOG,正式版本需要是false,但可通過adb命令打開
+    PRINT_LOG = true
+    //是否将LOG输出文件
+    WRITE_LOG2_FILE = false
+    //淘口令，吱口令 是否生效
+    COMMAND_COPY_ENABLE = false
+    //是否支持业务接口的动态代理
+    ISERVICE_DYNAMIC_ENABLED = true
+    //是否强制禁用反作弊
+    FORCE_DISABLE_SPAM = false
+
+    //正式服务器地址
+//    s.ydtad.com    恒世荣达
+//    s.xcmad.com     万裕
+//    s.xinguad.com  鑫谷
+//    sdk.xinxiansk.com
+
+//    RELEASE_SERVER_URL = "http://testsdk.ydtad.com:8100/api/" //测试
+//    RELEASE_SERVER_URL = "http://s.ydtad.com:8100/api/" //恒世荣达  淘新闻
+//    RELEASE_SERVER_URL = "http://s.xcmad.com:8100/api/" //万裕
+//    RELEASE_SERVER_URL = "http://s.xinguad.com:8100/api/" //鑫谷      波波视频
+//    RELEASE_QUERY_SERVER_URL = "http://sdk.xinxiansk.com:8100/api/" //鑫谷      波波视频
+    RELEASE_QUERY_SERVER_URL = "http://api.simengadx.com:8100/api/" //鑫谷      波波视频
+
+    //RELEASE_SERVER_URL 这个地址在某个具体的codeid配置中
+
+    //测试服务器地址
+    TEST_SERVER_URL = "http://api.simengadx.com:8100/api/"
+    //调试环境
+    DEV_SERVER_URL = "http://api.simengadx.com:8100/api/"
+
+    //************** start
+    //是否支持走默认集成的APP_ID和CODE_ID
+    SUPPORT_DEFAULT_3rdSDK_CONFIG = true
+
+    //************** end
+
+}

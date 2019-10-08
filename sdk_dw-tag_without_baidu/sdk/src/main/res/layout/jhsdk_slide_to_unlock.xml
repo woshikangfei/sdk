@@ -1,0 +1,39 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/jhsdk_shape_slide_button"
+    >
+
+   <RelativeLayout
+       android:id="@+id/rl_root"
+       android:layout_width="match_parent"
+       android:layout_height="40dp">
+
+       <RelativeLayout
+           android:id="@+id/rl_slide"
+           android:layout_width="match_parent"
+           android:layout_height="40dp">
+
+           <ImageView
+               android:id="@+id/iv_slide"
+               android:src="@drawable/jhsdk_icon_slide"
+               android:layout_width="wrap_content"
+               android:layout_height="40dp"/>
+
+       </RelativeLayout>
+
+       <com.analytics.sdk.view.widget.TextView2
+           android:id="@+id/tv_hint"
+           android:layout_centerHorizontal="true"
+           android:textColor="@android:color/white"
+           android:layout_centerVertical="true"
+           android:text="滑动解除锁定"
+           android:gravity="center"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+
+   </RelativeLayout>
+
+</RelativeLayout>

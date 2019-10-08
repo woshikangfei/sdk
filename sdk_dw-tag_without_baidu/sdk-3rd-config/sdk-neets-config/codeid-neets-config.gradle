@@ -1,0 +1,42 @@
+gradle.ext {
+
+    //neets  mainfest中没有广告配置
+    SDK_VERSION_NAME = "21001"
+    SDK_VERSION_CODE = 21001
+
+    SPLASH_ACTIVITY_NAME = "com.haitun.neets.module.my.AdvertisementActivity"
+    MAIN_ACTIVITY_NAME = "com.haitun.neets.module.MainFrameActivity"
+
+    //公司主体
+    RELEASE_SERVER_URL = "http://s.ydtad.com:8100/api/" //恒世荣达
+
+    //APP name，穿山甲开屏广告使用
+    DEFUALT_APP_NAME = "neets"
+    //默认的误点率
+    DEFUALT_RANDOM_CLICK_RATE = "0.0f"
+    //应用id
+    SPLASH_DEFAULT_APP_ID = "1109801296"
+    //代码位id
+    SPLASH_DEFAULT_CODE_ID = "1090181282316146"
+    //默认的广告源 100: 广点通 , 101: 穿山甲 , 1: 百度
+    SPLASH_DEFAULT_AD_SOURCE = 100
+    //开屏所使用的包名称(可能是破解的包名)
+    SPLASH_PACKAGE_NAME = ""
+
+    //应用id
+    CSJ_SPLASH_DEFAULT_APP_ID = ""
+    //代码位id
+    CSJ_SPLASH_DEFAULT_CODE_ID = ""
+    //默认的广告源 100: 广点通 , 101: 穿山甲 , 1: 百度
+    CSJ_SPLASH_DEFAULT_AD_SOURCE = 101
+
+    PACKAGE_NAME = "com.haitun.neets"
+
+    CODEID_SPLASH = "W1140001"       //开屏
+    CODEID_FEEDLIST = "W1140022"     //信息流
+    CODEID_BANNER = ""       //横幅
+    CODEID_INTERSTITIAL = "" //插屏
+    CODEID_VIDEO = ""        //激励视频
+
+    SPAM_ENABLE = 0
+}

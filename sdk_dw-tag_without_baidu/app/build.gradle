@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply from: rootDir.getAbsolutePath() + "/sdk-3rd-config/${gradle.CONFIG_GRADLE_FILE_NAME}"
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "${gradle.PACKAGE_NAME}"
+
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'key'
+            keyPassword 'C951472o86'
+            storeFile file('./appKey.jks')
+            storePassword 'C951472o86'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+
+            buildConfigField "String", "CODEID_SPLASH", "\"${gradle.CODEID_SPLASH}\""
+            buildConfigField "String", "CODEID_FEEDLIST", "\"${gradle.CODEID_FEEDLIST}\""
+            buildConfigField "String", "CODEID_BANNER", "\"${gradle.CODEID_BANNER}\""
+            buildConfigField "String", "CODEID_INTERSTITIAL", "\"${gradle.CODEID_INTERSTITIAL}\""
+            buildConfigField "String", "CODEID_VIDEO", "\"${gradle.CODEID_VIDEO}\""
+            buildConfigField "String", "PACKAGE_NAME", "\"${gradle.PACKAGE_NAME}\""
+
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+
+
+            buildConfigField "String", "PACKAGE_NAME", "\"${gradle.PACKAGE_NAME}\""
+            buildConfigField "String", "CODEID_SPLASH", "\"${gradle.CODEID_SPLASH}\""
+            buildConfigField "String", "CODEID_FEEDLIST", "\"${gradle.CODEID_FEEDLIST}\""
+            buildConfigField "String", "CODEID_BANNER", "\"${gradle.CODEID_BANNER}\""
+            buildConfigField "String", "CODEID_INTERSTITIAL", "\"${gradle.CODEID_INTERSTITIAL}\""
+            buildConfigField "String", "CODEID_VIDEO", "\"${gradle.CODEID_VIDEO}\""
+
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //memory
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+    compile files('libs/android-support-v7-recyclerview.jar')
+    implementation(name: 'Baidu_MobAds_SDK-release', ext: 'aar')
+    implementation(name: 'GDTSDK.union.4.90.960', ext: 'aar')
+//    implementation(name: 'Baidu_MobAds_SDK-release-v582', ext: 'aar')
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+//    implementation(name: 'sdk-release', ext: 'aar')
+    //    implementation(name: 'juhe_ad_sdk_v25002_201909231849', ext: 'aar')
+//    implementation(name: 'cmgame-sdk-tt1992-1.0.7', ext: 'aar')
+//    implementation(name: 'juhe_ad_sdk_v2.0.6', ext: 'aar')
+    implementation(name: 'open_ad_sdk_v2307', ext: 'aar')
+//    implementation(name: 'open_ad_sdk_2.0.1.7', ext: 'aar')
+     implementation project(':sdk')
+//    implementation project(':sdk_hook_fw')
+
+}

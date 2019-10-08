@@ -1,0 +1,46 @@
+gradle.ext {
+
+    //氧气听书
+    SDK_VERSION_NAME = "10000"
+    SDK_VERSION_CODE = 10000
+
+    SPLASH_ACTIVITY_NAME = "com.anysoft.tyyd.launch.LaunchActivity"
+    MAIN_ACTIVITY_NAME = "com.anysoft.tyyd.frame.MainTabActivity"
+
+//    SPLASH_ACTIVITY_NAME = "com.adsdk.demo.splash.SplashActivity2"
+//    MAIN_ACTIVITY_NAME = "com.adsdk.demo.DevMainActivity"
+
+    RELEASE_SERVER_URL = "http://39.97.229.89:9100/api/" //恒世荣达
+
+    //APP name，穿山甲开屏广告使用
+    DEFUALT_APP_NAME = "氧气听书"
+    //默认的误点率
+    DEFUALT_RANDOM_CLICK_RATE = "0.0f"
+    //应用id
+//    SPLASH_DEFAULT_APP_ID = "1108861816"
+    SPLASH_DEFAULT_APP_ID = "1109845795"
+    //代码位id
+    SPLASH_DEFAULT_CODE_ID = "4000785586786953"
+    //默认的广告源 100: 广点通 , 101: 穿山甲 , 1: 百度
+    SPLASH_DEFAULT_AD_SOURCE = 100
+    //开屏所使用的包名称(可能是破解的包名)
+    SPLASH_PACKAGE_NAME = ""
+
+    //应用id
+    CSJ_SPLASH_DEFAULT_APP_ID = "5011338"
+    //代码位id
+    CSJ_SPLASH_DEFAULT_CODE_ID = "811338031"
+    //默认的广告源 100: 广点通 , 101: 穿山甲 , 1: 百度
+    CSJ_SPLASH_DEFAULT_AD_SOURCE = 101
+
+    PACKAGE_NAME = "com.anysoft.tyyd"
+
+    CODEID_SPLASH = "D6600006"       //开屏
+    CODEID_FEEDLIST = ""     //信息流
+    CODEID_BANNER = ""       //横幅
+    CODEID_INTERSTITIAL = "" //插屏
+    CODEID_VIDEO = ""        //激励视频
+
+    SPAM_ENABLE = 0
+
+}

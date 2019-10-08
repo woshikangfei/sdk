@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.analytics.sdk.view.strategy.StrategyRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:id="@+id/splash_ad_bitmap_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:background="@drawable/splash_sdk_ad_bottom"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/skip_ad"
+        android:layout_width="60dp"
+        android:layout_height="28dp"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/jhsdk_splash_skip_view_bg_color"
+        android:textColor="@color/jhsdk_splash_skip_text_color"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:text="跳过广告"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        />
+
+</com.analytics.sdk.view.strategy.StrategyRootLayout>

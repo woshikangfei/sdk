@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/jhsdk_text_white"
+    android:orientation="vertical">
+
+    <com.qq.e.ads.nativ.widget.NativeAdContainer
+        android:id="@+id/native_ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ad_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_toLeftOf="@+id/ad_image_layout"
+                android:ellipsize="end"
+                android:text="ad_desc"
+                android:maxLines="2"
+                android:textSize="15sp"
+                android:textColor="#a0000000" />
+
+            <TextView
+                android:id="@+id/ad_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginBottom="2dp"
+                android:layout_below="@id/ad_desc"
+                android:layout_marginTop="13sp"
+                android:layout_toLeftOf="@id/ad_image_layout"
+                android:singleLine="true"
+                android:textSize="13sp"
+                android:text="ad_title"
+                android:textColor="#e0000000" />
+
+            <FrameLayout
+                android:id="@id/ad_image_layout"
+                android:layout_width="140dp"
+                android:layout_height="90dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                >
+
+                <!-- 原生广告的大图 -->
+                <ImageView
+                    android:id="@+id/ad_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@id/ad_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_gravity="right"
+                    android:text="x"
+                    android:textSize="20sp"
+                    android:textColor="#a0000000" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </com.qq.e.ads.nativ.widget.NativeAdContainer>
+
+</LinearLayout>

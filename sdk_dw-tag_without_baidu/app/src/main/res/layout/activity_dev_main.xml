@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.adsdk.demo.LinearLayoutTest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/test01"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:text="这是开发者的首页"
+        android:textColor="@color/jhsdk_text_white"
+        android:background="@color/jhsdk_text_red"
+        />
+
+</com.adsdk.demo.LinearLayoutTest>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/info"
+        android:padding="10dp"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/jhsdk_text_red"
+        />
+
+    <Button
+        android:id="@+id/splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开屏演示"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <Button
+        android:id="@+id/interstitial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插屏演示"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+    <Button
+        android:id="@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="横幅演示"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+
+    <Button
+        android:id="@+id/feedlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="信息流演示"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <Button
+        android:id="@+id/feedlist_native"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="原生信息流广告"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="247dp" />
+    <Button
+        android:id="@+id/reward_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="激励视频演示"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <Button
+        android:id="@+id/clickMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制热力图"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+</LinearLayout>

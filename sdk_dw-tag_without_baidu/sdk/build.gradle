@@ -1,0 +1,221 @@
+import com.android.build.gradle.api.ApplicationVariant
+import com.android.build.gradle.api.LibraryVariant
+import com.google.common.base.Joiner
+
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.library'
+//apply plugin: 'com.android.application'
+apply from: projectDir.getAbsolutePath() + "/build-config.gradle"
+
+android {
+    compileSdkVersion 28
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+    defaultConfig {
+//        applicationId "com.analytics.sdk"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode Integer.valueOf("${gradle.SDK_VERSION_CODE}")
+        versionName gradle.SDK_VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            buildConfigField "boolean", "HOOK_CSJ_SDK", "${gradle.HOOK_CSJ_SDK}"
+            buildConfigField "boolean", "PRINT_LOG", "${gradle.PRINT_LOG}"
+            buildConfigField "boolean", "COMMAND_COPY_ENABLE", "${gradle.COMMAND_COPY_ENABLE}"
+            buildConfigField "boolean", "WRITE_LOG2_FILE", "${gradle.WRITE_LOG2_FILE}"
+            buildConfigField "boolean", "FORCE_DISABLE_SPAM", "${gradle.FORCE_DISABLE_SPAM}"
+
+            buildConfigField "boolean", "HOOK_SYSTEM", "${gradle.HOOK_SYSTEM}"
+            buildConfigField "int", "RELEASE_EVN", "${gradle.RELEASE_EVN}"
+            buildConfigField "String", "RELEASE_SERVER_URL", "\"${gradle.RELEASE_SERVER_URL}\""
+            buildConfigField "String", "TEST_SERVER_URL", "\"${gradle.TEST_SERVER_URL}\""
+            buildConfigField "String", "DEV_SERVER_URL", "\"${gradle.DEV_SERVER_URL}\""
+
+            buildConfigField "boolean", "SUPPORT_DEFAULT_3rdSDK_CONFIG", "${gradle.SUPPORT_DEFAULT_3rdSDK_CONFIG}"
+            buildConfigField "float", "DEFUALT_RANDOM_CLICK_RATE", "${gradle.DEFUALT_RANDOM_CLICK_RATE}"
+            buildConfigField "String", "SPLASH_DEFAULT_APP_ID", "\"${gradle.SPLASH_DEFAULT_APP_ID}\""
+            buildConfigField "String", "SPLASH_DEFAULT_CODE_ID", "\"${gradle.SPLASH_DEFAULT_CODE_ID}\""
+            buildConfigField "int", "SPLASH_DEFAULT_AD_SOURCE", "${gradle.SPLASH_DEFAULT_AD_SOURCE}"
+            buildConfigField "String", "SPLASH_PACKAGE_NAME", "\"${gradle.SPLASH_PACKAGE_NAME}\""
+
+            buildConfigField "String", "DEFUALT_APP_NAME", "\"${gradle.DEFUALT_APP_NAME}\""
+            buildConfigField "String", "CSJ_SPLASH_DEFAULT_APP_ID", "\"${gradle.CSJ_SPLASH_DEFAULT_APP_ID}\""
+            buildConfigField "String", "CSJ_SPLASH_DEFAULT_CODE_ID", "\"${gradle.CSJ_SPLASH_DEFAULT_AD_SOURCE}\""
+            buildConfigField "int", "CSJ_SPLASH_DEFAULT_AD_SOURCE", "${gradle.CSJ_SPLASH_DEFAULT_AD_SOURCE}"
+            buildConfigField "String", "CONFIG_GRADLE_FILE_NAME", "\"${gradle.CONFIG_GRADLE_FILE_NAME}\""
+            buildConfigField "boolean", "SUPPORT_DEFAULT_3rdSDK_CONFIG", "${gradle.SUPPORT_DEFAULT_3rdSDK_CONFIG}"
+            buildConfigField "int", "SPAM_ENABLE", "${gradle.SPAM_ENABLE}"
+            buildConfigField "String", "RELEASE_QUERY_SERVER_URL", "\"${gradle.RELEASE_QUERY_SERVER_URL}\""
+
+            buildConfigField "String", "SPLASH_ACTIVITY_NAME", "\"${gradle.SPLASH_ACTIVITY_NAME}\""
+            buildConfigField "String", "MAIN_ACTIVITY_NAME", "\"${gradle.MAIN_ACTIVITY_NAME}\""
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            android.libraryVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "${gradle.ARTIFACT_NAME}_v"+"${gradle.SDK_VERSION_NAME}_"+new SimpleDateFormat("yyyyMMddHHmm").format(new Date(System.currentTimeMillis()))+".aar"
+                }
+            }
+
+        }
+        debug {
+            minifyEnabled true
+
+            buildConfigField "boolean", "HOOK_SYSTEM", "${gradle.HOOK_SYSTEM}"
+            buildConfigField "boolean", "HOOK_CSJ_SDK", "${gradle.HOOK_CSJ_SDK}"
+            buildConfigField "boolean", "PRINT_LOG", "${gradle.PRINT_LOG}"
+            buildConfigField "boolean", "COMMAND_COPY_ENABLE", "${gradle.COMMAND_COPY_ENABLE}"
+            buildConfigField "boolean", "WRITE_LOG2_FILE", "${gradle.WRITE_LOG2_FILE}"
+
+            buildConfigField "int", "RELEASE_EVN", "${gradle.RELEASE_EVN}"
+            buildConfigField "String", "RELEASE_SERVER_URL", "\"${gradle.RELEASE_SERVER_URL}\""
+            buildConfigField "String", "TEST_SERVER_URL", "\"${gradle.TEST_SERVER_URL}\""
+
+
+            buildConfigField "boolean", "SUPPORT_DEFAULT_3rdSDK_CONFIG", "${gradle.SUPPORT_DEFAULT_3rdSDK_CONFIG}"
+            buildConfigField "float", "DEFUALT_RANDOM_CLICK_RATE", "${gradle.DEFUALT_RANDOM_CLICK_RATE}"
+            buildConfigField "String", "SPLASH_DEFAULT_APP_ID", "\"${gradle.SPLASH_DEFAULT_APP_ID}\""
+            buildConfigField "String", "SPLASH_DEFAULT_CODE_ID", "\"${gradle.SPLASH_DEFAULT_CODE_ID}\""
+            buildConfigField "int", "SPLASH_DEFAULT_AD_SOURCE", "${gradle.SPLASH_DEFAULT_AD_SOURCE}"
+
+            buildConfigField "String", "DEFUALT_APP_NAME", "\"${gradle.DEFUALT_APP_NAME}\""
+            buildConfigField "String", "CSJ_SPLASH_DEFAULT_APP_ID", "\"${gradle.CSJ_SPLASH_DEFAULT_APP_ID}\""
+            buildConfigField "String", "CSJ_SPLASH_DEFAULT_CODE_ID", "\"${gradle.CSJ_SPLASH_DEFAULT_CODE_ID}\""
+            buildConfigField "int", "CSJ_SPLASH_DEFAULT_AD_SOURCE", "${gradle.CSJ_SPLASH_DEFAULT_AD_SOURCE}"
+            buildConfigField "String", "SPLASH_PACKAGE_NAME", "\"${gradle.SPLASH_PACKAGE_NAME}\""
+
+            buildConfigField "String", "CONFIG_GRADLE_FILE_NAME", "\"${gradle.CONFIG_GRADLE_FILE_NAME}\""
+            buildConfigField "boolean", "SUPPORT_DEFAULT_3rdSDK_CONFIG", "${gradle.SUPPORT_DEFAULT_3rdSDK_CONFIG}"
+
+            buildConfigField "String", "SPLASH_ACTIVITY_NAME", "\"${gradle.SPLASH_ACTIVITY_NAME}\""
+            buildConfigField "String", "MAIN_ACTIVITY_NAME", "\"${gradle.MAIN_ACTIVITY_NAME}\""
+            buildConfigField "int", "SPAM_ENABLE", "${gradle.SPAM_ENABLE}"
+            buildConfigField "String", "RELEASE_QUERY_SERVER_URL", "\"${gradle.RELEASE_QUERY_SERVER_URL}\""
+            buildConfigField "boolean", "FORCE_DISABLE_SPAM", "${gradle.FORCE_DISABLE_SPAM}"
+            buildConfigField "String", "DEV_SERVER_URL", "\"${gradle.DEV_SERVER_URL}\""
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    sourceSets {
+        if(gradle.HOT_FIX){
+            main {
+                java.srcDirs = ['src/hotfix/java/']
+            }
+        } else if(gradle.HOT_TASK){
+            main {
+                java.srcDirs = ['src/task/java/']
+            }
+        } else {
+            main {
+                java.srcDirs = ['src/main/java']
+            }
+        }
+
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+
+//    compile(name: 'open_ad_sdk_2.0.1.7', ext: 'aar')
+    compile(name: 'open_ad_sdk', ext: 'aar')
+//    compile(name: 'open_ad_sdk_v2307', ext: 'aar')
+//    compile(name: 'open_ad_sdk_2.3.0.4', ext: 'aar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+//    compile(name: 'Baidu_MobAds_SDK-release-v582', ext: 'aar')
+    compileOnly files('libs/android-support-v7-recyclerview.jar')
+    compileOnly files('libs/android-query-full.0.26.7.jar')
+//    compileOnly files('libs/GDTSDK.union.4.70.940.jar')
+    compileOnly files('libs/GDTSDK.union.4.90.960.aar')
+    compileOnly project(':sdk_stub_android')
+//    compile project(':sdk_luavm')
+    if(gradle.HOT_FIX || gradle.HOT_TASK){
+        compileOnly files('libs_hotfix/classes.jar')
+    }
+}
+final String projectAndroidStub = ':sdk_stub_android'
+// Using Stub classes first when compiling.
+afterEvaluate {
+    project.android.libraryVariants.each { LibraryVariant variant ->
+        variant.javaCompile.doFirst { JavaCompile javaCompile ->
+            String projectAndroidStubPath = project.project(projectAndroidStub).projectDir.canonicalPath
+//            println "projectAndroidStubPath: ${projectAndroidStubPath}"
+            File stubPath = javaCompile.classpath.find {
+                it.canonicalPath.startsWith(projectAndroidStubPath)
+            }
+            if (stubPath == null) {
+                throw new RuntimeException("reset bootclasspath error.")
+            }
+            javaCompile.options.setBootClasspath(Joiner.on(File.pathSeparator).join(stubPath, javaCompile.options.bootClasspath))
+        }
+    }
+}
+
+preBuild {
+    doLast {
+        def imlFile = file(project.name + ".iml")
+        println 'Change ' + project.name + '.iml order'
+        try {
+            def parsedXml = (new XmlParser()).parse(imlFile)
+            def jdkNode = parsedXml.component[1].orderEntry.find { it.'@type' == 'jdk' }
+            parsedXml.component[1].remove(jdkNode)
+            def sdkString = "Android API " + android.compileSdkVersion.substring("android-".length()) + " Platform"
+            new Node(parsedXml.component[1], 'orderEntry', ['type': 'jdk', 'jdkName': sdkString, 'jdkType': 'Android SDK'])
+            groovy.xml.XmlUtil.serialize(parsedXml, new FileOutputStream(imlFile))
+        } catch (FileNotFoundException e) {
+            // nop, iml not found
+            println '******************** FileNotFoundException'
+        }
+    }
+}
+
+task sdk_deleteExist(type: Delete) {
+    delete "${gradle.JAR_OUTPUT_DIR}"
+    delete "${gradle.AAR_OUTPUT_DIR}"
+}
+
+task sdk_makeJAR(type: proguard.gradle.ProGuardTask, dependsOn: [build]) {
+    // 未混淆的jar路径
+    injars "${gradle.JAR_HOME}/release/classes_huasheng.jar"
+    // 混淆后的jar输出路径
+    outjars 'buildMap/outputs/cocolove2-banner-1.1.0.jar'
+    // 混淆协议
+    configuration 'proguard-rules.pro'
+}
+
+task sdk_genJAR(type: Copy, dependsOn: [sdk_deleteExist,sdk_makeJAR]) {
+
+    from "${gradle.JAR_HOME}/release/classes_huasheng.jar"
+    into "${gradle.JAR_OUTPUT_DIR}/"
+    rename {
+//        "${gradle.JAR_NAME}_V${gradle.VERSION_NAME}.jar"
+        "${gradle.ARTIFACT_NAME}.jar"
+    }
+}
+
+task sdk_genAAR(type: Copy, dependsOn: [sdk_deleteExist, assemble]) {
+
+    from "${gradle.AAR_HOME}/${gradle.ARTIFACT_NAME}_v${gradle.SDK_VERSION_NAME}.aar"
+    into "${gradle.AAR_OUTPUT_DIR}/"
+    rename {
+        "${gradle.ARTIFACT_NAME}_v${gradle.SDK_VERSION_NAME}.aar"
+    }
+}
+

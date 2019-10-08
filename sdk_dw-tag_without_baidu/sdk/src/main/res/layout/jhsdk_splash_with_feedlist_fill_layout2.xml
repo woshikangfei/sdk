@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.analytics.sdk.view.strategy.StrategyRootLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ad_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/jhsdk_text_black"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:text="标题"
+        android:gravity="center"
+        />
+
+    <ImageView
+        android:id="@+id/ad_bitmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/ad_title"
+        android:background="@drawable/splash_sdk_ad_bottom"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:id="@+id/ad_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:layout_alignBottom="@id/ad_bitmap"
+        android:layout_alignRight="@id/ad_bitmap"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/ad_textlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ad_bitmap"
+        android:layout_alignRight="@id/ad_bitmap"
+        android:text="广告"
+        android:textSize="10sp"
+        android:textColor="#8C8C8C8C"
+        />
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/splash_sdk_ad_bottom"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/ad_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/jhsdk_splash_skip_view_bg_color"
+        android:textColor="@color/jhsdk_splash_skip_text_color"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:text="跳过广告"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        />
+
+</com.analytics.sdk.view.strategy.StrategyRootLayout>
