@@ -1,7 +1,7 @@
 include ':app', ':sdk', ':sdk_stub_android', ':sdk_hook_fw', ':sdk_tools'
 
-String GRADLE_FILE_NAME = "codeid-yangqitingshu-config.gradle" //氧气听书
-
+//String GRADLE_FILE_NAME = "codeid-yangqitingshu-config.gradle" //氧气听书
+String GRADLE_FILE_NAME = "codeid-youdu-config.gradle" //有读
 
 
 //String GRADLE_FILE_NAME = "codeid-neets_taiju-config" // neets

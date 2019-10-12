@@ -25,9 +25,6 @@ import com.analytics.sdk.common.runtime.event.Event;
 import com.analytics.sdk.common.runtime.event.EventScheduler;
 import com.analytics.sdk.config.AdConfig;
 import com.analytics.sdk.helper.SdkHelper;
-import com.analytics.sdk.service.ServiceManager;
-import com.analytics.sdk.service.dynamic.IDynamicService;
-import com.analytics.sdk.view.strategy.crack.ProxyActivity;
 import com.analytics.sdk.view.strategy.crack.ProxyContext;
 
 public class InstrumentationHack extends Instrumentation {
@@ -349,8 +346,6 @@ public class InstrumentationHack extends Instrumentation {
         if(HackPackageMapping.isSplashActivity(activity)) {
             splashActivityState.mStopped = UIHelper.ActivityState.TRUE;
         }
-        IDynamicService dynamicService = ServiceManager.getService(IDynamicService.class);
-        dynamicService.tryC();
     }
 
 

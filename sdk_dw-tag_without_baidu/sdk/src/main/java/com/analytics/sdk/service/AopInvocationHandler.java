@@ -2,7 +2,6 @@ package com.analytics.sdk.service;
 
 import com.analytics.sdk.common.log.Logger;
 import com.analytics.sdk.config.AdConfig;
-import com.analytics.sdk.service.dynamic.ITaskService;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

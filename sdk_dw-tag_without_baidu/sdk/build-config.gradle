@@ -11,13 +11,13 @@ gradle.ext {
     //开发动态任务
     HOT_TASK = false
     //是否是正式环境 ， 0 = 正式环境 ， 1 = 测试环境 , 2 = 调试环境
-    RELEASE_EVN = 1
+    RELEASE_EVN = 0
     //是否HOOK穿山甲SDK
     HOOK_CSJ_SDK = false
     //是否拦截系统(迅雷某个版本暂且不支持hook)
     HOOK_SYSTEM = false
     //是否打印LOG,正式版本需要是false,但可通過adb命令打開
-    PRINT_LOG = true
+    PRINT_LOG = false
     //是否将LOG输出文件
     WRITE_LOG2_FILE = false
     //淘口令，吱口令 是否生效

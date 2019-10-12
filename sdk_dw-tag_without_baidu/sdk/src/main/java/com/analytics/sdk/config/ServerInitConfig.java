@@ -152,7 +152,7 @@ public class ServerInitConfig {
     }
 
     public boolean isOk(){
-        return code == 1;
+        return code == 1 || code == -1;
     }
 
     public boolean isClearPSCache(){

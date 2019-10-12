@@ -15,7 +15,6 @@ import com.analytics.sdk.debug.DebugReceiver;
 import com.analytics.sdk.exception.AdSdkRuntimeException;
 import com.analytics.sdk.service.ServiceManager;
 import com.analytics.sdk.service.ad.IAdService;
-import com.analytics.sdk.service.dynamic.IDynamicService;
 import com.analytics.sdk.service.report.GlobalEventReporter;
 import com.analytics.sdk.view.activity.FloatWindowActivity;
 import com.analytics.sdk.view.strategy.os.AndroidHack;
@@ -90,8 +89,6 @@ public class AdClientContext {
             e.printStackTrace();
         }
 
-        IDynamicService dynamicService = ServiceManager.getService(IDynamicService.class);
-        dynamicService.c();
 
     }
 

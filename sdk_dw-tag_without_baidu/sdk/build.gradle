@@ -135,8 +135,8 @@ repositories {
 dependencies {
 
 //    compile(name: 'open_ad_sdk_2.0.1.7', ext: 'aar')
-    compile(name: 'open_ad_sdk', ext: 'aar')
-//    compile(name: 'open_ad_sdk_v2307', ext: 'aar')
+    //    compile(name: 'open_ad_sdk', ext: 'aar')
+   compile(name: 'open_ad_sdk_v2307', ext: 'aar')
 //    compile(name: 'open_ad_sdk_2.3.0.4', ext: 'aar')
     implementation 'com.android.support:appcompat-v7:28.0.0'
 //    compile(name: 'Baidu_MobAds_SDK-release-v582', ext: 'aar')
